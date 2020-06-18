@@ -179,4 +179,8 @@ service port 8080
 containerPort 8080
 
 
+#push docker image to aws
+aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 387373165092.dkr.ecr.us-east-2.amazonaws.com
 
+#build the image in aws
+docker build -t aws-cicd-demo .
